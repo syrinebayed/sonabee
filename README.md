@@ -1,21 +1,28 @@
 # Sonabee — Acoustic Hive Intelligence
 
-Lightweight toolkit for extracting acoustic features from hive audio, building a dataset, training a Random Forest classifier, and running a Streamlit inspection UI.
+Sonabee is a lightweight machine-learning toolkit for monitoring honeybee hive health using sound.
 
-## Summary
+I built this project out of a long-standing obsession with bees and a curiosity about whether subtle acoustic patterns — often ignored as background noise — could act as early signals of colony stress. Beekeepers frequently notice problems too late, after visible collapse has already begun. Sonabee explores whether listening more carefully can shift that timeline earlier.
 
-Sonabee processes raw hive audio to extract MFCC and simple energy features, combines those with ambient/weather temperature, and trains a classifier to detect at-risk hives. A Streamlit app (`app.py`) provides a simple UI for uploading audio, fetching temperature (optional via OpenWeather), visualizing acoustics, and showing a health assessment.
+The system processes raw hive audio, extracts interpretable acoustic features, and trains a simple but effective classifier to flag potentially at-risk hives. The emphasis is on practical signals, fast iteration, and transparency, rather than black-box models.
 
-## Repo structure
+## What It Does
 
-- `app.py` — Streamlit app for inspection and quick predictions
-- `build_dataset.py` — create `data/features_with_weather.csv` from audio and metadata
-- `features.py` — audio feature extraction (MFCC, RMS, amplitude std)
-- `train_model.py` — train and save a RandomForest model to `models/`
-- `data/features_with_weather.csv` — example dataset produced by `build_dataset.py`
-- `sound_files/` — audio files used by `build_dataset.py`
+- Extracts MFCCs and basic energy features from hive audio
+- Combines acoustic signals with ambient temperature data
+- Trains a Random Forest classifier to assess hive health risk
+- Provides a Streamlit interface for inspection, visualization, and rapid testing
+  
+## Repo Structure
 
-## Requirements
+- `app.py` — Streamlit app for interactive inspection and quick predictions
+- `build_dataset.py` — builds data/features_with_weather.csv from audio + metadata
+- `features.py` — audio feature extraction (MFCC, RMS energy, amplitude statistics)
+- `train_model.py` — trains and saves a Random Forest model
+- `data/features_with_weather.csv` — example dataset produced by the pipeline
+- `sound_files/` — raw hive audio used for feature extraction
+  
+## Set Up
 
 Install dependencies using:
 
@@ -57,3 +64,4 @@ The app will try common model filenames under `models/` and will use the saved p
 - `build_dataset.py` appends the recorded weather temperature as an additional feature before saving `data/features_with_weather.csv`.
 - `train_model.py` trains a pipeline with `StandardScaler` and `RandomForestClassifier` (300 trees, class-balanced) and saves it via `joblib`.
 - `app.py` contains helpers to extract features, prepare vectors to match model input size (handles models trained with/without temperature), visualizations (mel spectrogram / MFCCs) and a small rule-of-thumb interpreter for results.
+

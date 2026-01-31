@@ -41,11 +41,12 @@ https://www.kaggle.com/datasets/annajyang/beehive-sounds
 
 To reproduce the full pipeline, download the Kaggle dataset and place files as follows:
 
+```text
 sonabee/
-├── sound_files/               
+├── sound_files/                 # raw hive audio (.wav)
 │   ├── 2022-06-05-17-41-01_*.wav
 │   └── ...
-├── all_data_updated.csv    
+├── all_data_updated.csv         # hive + weather metadata (timestamp-aligned)
 
   
 ## Set Up

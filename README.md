@@ -48,17 +48,6 @@ sonabee/
 │   └── ...
 ├── all_data_updated.csv         # hive + weather metadata (timestamp-aligned)
 
-  
-## Set Up
-
-Install dependencies using:
-
-```bash
-pip install -r requirements.txt
-```
-
-Minimum tested Python: 3.8+
-
 ## Quick start
 
 1. Prepare the metadata CSV `all_data_updated.csv` in the repo root and put WAV files in `sound_files/`.

@@ -1,15 +1,13 @@
 # Sonabee — Acoustic Hive Intelligence 🐝
 
 **📘 [View the project overview deck (PDF)](Sonabee_Presentation.pdf)**  
-*A concise walkthrough of the problem, system design, demo, limitations, and future directions.*
+*A concise walkthrough of the problem, system design, **demo**, limitations, and future directions.*
 
 Sonabee is a lightweight machine-learning toolkit for monitoring honeybee hive health using sound.
 
 I built this project out of a long-standing obsession with bees and a curiosity about whether subtle acoustic patterns—often ignored as background noise—could act as early signals of colony stress. Beekeepers frequently notice problems too late, after visible collapse has already begun. Sonabee explores whether listening more carefully can shift that timeline earlier.
 
 The system processes raw hive audio, extracts interpretable acoustic features, and trains a simple but effective classifier to flag potentially at-risk hives. The emphasis is on practical signals, fast iteration, and transparency, rather than black-box models.
-
-![Sonabee Demo](assets/demo_ui.png)
 
 ---
 

@@ -24,6 +24,29 @@ The system processes raw hive audio, extracts interpretable acoustic features, a
 - `train_model.py` — trains and saves a Random Forest model
 - `data/features_with_weather.csv` — example dataset produced by the pipeline
 - `sound_files/` — raw hive audio used for feature extraction
+
+## Dataset & Large Files
+
+This repository does **not** include raw hive audio files or full metadata tables due to size constraints.
+
+Sonabee was developed using the **Smart Bee Colony Monitor** dataset from Kaggle, which contains:
+- ~7,100 one-minute `.wav` hive audio recordings collected in California
+- Multi-modal metadata including hive temperature, humidity, pressure, weather conditions, wind speed, and timestamps
+- Labels related to colony state (e.g. queen presence, hive activity)
+
+**Dataset source:**  
+https://www.kaggle.com/datasets/annajyang/beehive-sounds
+
+### Required files (not tracked in GitHub)
+
+To reproduce the full pipeline, download the Kaggle dataset and place files as follows:
+
+sonabee/
+├── sound_files/               
+│   ├── 2022-06-05-17-41-01_*.wav
+│   └── ...
+├── all_data_updated.csv    
+
   
 ## Set Up
 

@@ -1,0 +1,19 @@
+# system
+.DS_Store
+
+# python
+__pycache__/
+*.pyc
+
+# virtual env
+.venv/
+
+# data too large
+sound_files/
+data/
+
+# temp files
+temp_uploaded.wav
+
+# workspace
+*.code-workspace

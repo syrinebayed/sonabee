@@ -1,0 +1,13 @@
+numpy
+pandas
+scikit-learn
+joblib
+torch
+torchaudio
+soundfile
+matplotlib
+streamlit
+requests
+
+# Optional (dev)
+# jupyter
